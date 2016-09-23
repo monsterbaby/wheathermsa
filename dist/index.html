@@ -1,0 +1,60 @@
+<!doctype html><html class="no-js" lang=""><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cloud Station</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><!-- Place favicon.ico in the root directory --><link rel="stylesheet" href="styles/main.css"><script src="scripts/vendor/modernizr.js"></script><!-- 
+To collect end-user usage analytics about your application, 
+insert the following script into each page you want to track.
+Place this code immediately before the closing </head> tag,
+and before any other scripts. Your first data will appear 
+automatically in just a few seconds.
+--><script type="text/javascript">var appInsights = window.appInsights || function(config) {
+      function r(config) {
+        t[config] = function() {
+          var i = arguments;
+          t.queue.push(function() {
+            t[config].apply(t, i)
+          })
+        }
+      }
+      var t = {
+          config: config
+        },
+        u = document,
+        e = window,
+        o = "script",
+        s = u.createElement(o),
+        i, f;
+      s.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js";
+      u.getElementsByTagName(o)[0].parentNode.appendChild(s);
+      try {
+        t.cookie = u.cookie
+      } catch (h) {}
+      for (t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; i.length;) r("track" + i.pop());
+      return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function(config, r, u, e, o) {
+        var s = f && f(config, r, u, e, o);
+        return s !== !0 && t["_" + i](config, r, u, e, o), s
+      }), t
+    }({
+      instrumentationKey: "ebd2e5e8-8040-4833-8d78-99888e5e4271"
+    });
+
+    window.appInsights = appInsights;
+    appInsights.trackPageView();</script></head><body><!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--><div class="container" id="page-container"><h1 id="app-name"><span class="glyphicon glyphicon-cloud"></span> Cloud Station</h1><!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap --><h2 id="page-header">Get Weather based on your city.</h2><div class="row"><div class="col-md-6 col-md-offset-3"><div class="input-group"><input class="form-control" id="search" name="search" placeholder="Where is your city" type="search" value=""> <span class="input-group-btn"><button class="btn btn-default greenbtn" type="submit" onclick="getWeather()">Go!</button></span></div><!-- /input-group --></div><!-- /.col-lg-6 --></div><div class="btn-wrapper"><button class="btn" onclick="myFunction()">Click Me</button></div><div><div id="result"></div></div><div id="googleMap"><!-- 
+            NB: You generally do not want to publically expose the server structure (eg. ./node_modules/...)
+            will sort that in later bootcamps with task-runners and the like.
+            For now this is just a demonstration.
+
+            Alternatively can use CDNs for bootstrap/jquery
+        --><!--jQuery Script--><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script><!--Bootstrap Script--><script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><!--SoundCloud SDK--><script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script><!--Custom Script--><script src="./js/weather.js"></script><script async defer="defer" src="//maps.googleapis.com/maps/api/js?key=AIzaSyAJsI4B3Sucv3gPiQMVSbofEFMqcIjV9C0&callback=initMap" type="text/javascript"></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+        function() {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = 'https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');</script><script src="scripts/vendor.js"></script><script src="scripts/plugins.js"></script></div></div></body></html>
